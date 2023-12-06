@@ -21,13 +21,13 @@ namespace testapp.Controllers
         [ProducesResponseType(200, Type = typeof(IEnumerable<Pokemon>))]
         public IActionResult GetPokemons()
         {
-            var poekmons =_mapper.Map<List<PokemonDto>>(_pokemonRepository.GetPokemons());
+            var pokemons =_mapper.Map<List<PokemonDto>>(_pokemonRepository.GetPokemons());
 
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            return Ok(poekmons);
+            return Ok(pokemons);
         }
 
         [HttpGet("{pokeId}")]
